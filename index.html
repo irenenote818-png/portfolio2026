@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人介紹 | 自信重返職場 ‧ 邁向新旅程</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        theme: {
+                            teal: '#36D1C4',       // 圖片主色：活力青綠/藍綠
+                            tealDark: '#22A398',
+                            tealLight: '#E8FAF8',
+                            pink: '#E03E65',       // 圖片次色：鮮明桃紅/玫紅
+                            pinkLight: '#FDEBF0',
+                            orange: '#FF7A00',     // 圖片點綴：暖橙
+                            orangeLight: '#FFF3E6',
+                            yellow: '#E5B200',     // 圖片點綴：金黃
+                            yellowLight: '#FEF9E6',
+                            bg: '#F5F7F8',         // 簡潔涼灰白底色
+                            card: '#FFFFFF',       // 純白卡片
+                            text: '#1E293B',       // 深灰字體
+                            muted: '#64748B',      // 次要灰字
+                            border: '#E2E8F0',     // 邊框
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Noto Sans TC (Include 700, 900 for bold typography like image) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: #F5F7F8;
+            color: #1E293B;
+        }
+        .font-black-tc {
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="bg-theme-bg text-theme-text min-h-screen flex flex-col justify-between selection:bg-theme-teal selection:text-white">
+
+    <!-- 頂部簡報風格四色點點裝飾條 -->
+    <div class="max-w-5xl mx-auto w-full pt-6 px-6 flex justify-between items-center">
+        <div class="text-xs font-bold uppercase tracking-widest text-theme-muted flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-theme-teal animate-pulse"></span>
+            PORTFOLIO PRESENTATION
+        </div>
+        <!-- 右上角 4 色圓點標記 (靈感來自圖片右上角) -->
+        <div class="flex items-center gap-1.5">
+            <span class="w-3.5 h-3.5 rounded-full bg-theme-pink inline-block"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-theme-orange inline-block"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-theme-yellow inline-block"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-theme-teal inline-block"></span>
+        </div>
+    </div>
+
+    <!-- 主要內容容器 -->
+    <main class="max-w-5xl mx-auto px-6 py-8 w-full space-y-10">
+
+        <!-- 1. 姓名與一句話自我定位 (Hero - 融入圖片中的巨大圓形視覺) -->
+        <header class="bg-theme-card p-8 md:p-12 rounded-3xl border border-theme-border shadow-sm relative overflow-hidden">
+            
+            <!-- Tiffany 綠圓形個人照片展示區 -->
+            <div class="absolute -right-6 -top-6 md:-right-4 md:-top-4 w-52 h-52 md:w-80 md:h-80 rounded-full bg-theme-teal p-3 md:p-4 shadow-lg flex items-center justify-center group overflow-hidden transition-transform duration-300 hover:scale-105 z-0">
+                <div class="w-full h-full rounded-full overflow-hidden border-4 border-white/60 shadow-inner relative bg-theme-tealLight flex items-center justify-center">
+                    <img id="avatar-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                         alt="陳美華 個人照片" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/36D1C4/FFFFFF?text=Mei-Hua';" />
+                    
+                    <!-- 滑鼠懸停時顯示更換照片提示 -->
+                    <label for="photo-upload" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white cursor-pointer text-xs font-bold gap-1 backdrop-blur-xs">
+                        <span class="text-2xl">📷</span>
+                        <span>更換照片</span>
+                    </label>
+                    <input type="file" id="photo-upload" accept="image/*" class="hidden" onchange="previewUserPhoto(event)" />
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-2xl space-y-6">
+                <!-- 標籤 -->
+                <div class="inline-flex items-center gap-2 bg-theme-tealLight text-theme-tealDark text-xs font-bold px-4 py-1.5 rounded-full border border-theme-teal/30 tracking-wider">
+                    自信重返職場 ‧ 蓄勢待發
+                </div>
+                
+                <!-- 大標題：超粗黑體展現強烈視覺感 -->
+                <h1 class="text-4xl md:text-6xl font-black-tc tracking-tight text-theme-text flex flex-wrap items-baseline gap-3">
+                    <span>陳美華</span>
+                    <span class="text-xl md:text-2xl font-bold text-theme-muted tracking-normal font-sans">/ Mei-Hua Chen</span>
+                </h1>
+
+                <!-- 核心文案標語 (引言區塊) -->
+                <div class="bg-white/80 backdrop-blur-sm p-4 md:p-5 rounded-2xl border-l-4 border-theme-pink shadow-sm">
+                    <p class="text-base md:text-xl font-bold text-theme-pink leading-relaxed">
+                        「結合數位邏輯與人性化服務，以自信快樂的積極精神開創職涯新頁。」
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. 關於我 (About Me) -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-3">
+                <span class="w-3 h-3 bg-theme-pink rounded-full"></span>
+                <h2 class="text-sm font-black-tc uppercase tracking-wider text-theme-text">About Me / 關於我</h2>
+            </div>
+            <div class="bg-theme-card p-6 md:p-8 rounded-3xl border border-theme-border shadow-sm space-y-4 text-theme-text leading-relaxed text-base md:text-lg">
+                <p>
+                    你好！我是美華。職涯初期，我曾任內勤行政，主動將公司原本手寫白板的業績數據轉為電腦數位化報表，大幅提升團隊與主管隨時查看業績的效率；轉戰外勤業務後，我不僅穩定達成業績目標，更積極透過陌生拜訪、發傳單與持續參與各類專業課程，為客戶量身打造超越預期的風險規劃，順利晉升為主管。
+                </p>
+                <p>
+                    隨後因結婚生子暫別職場 20 年，投入家庭生活。這期間我從未中斷學習，培養出豐富的人生智慧與跨領域溝通韌性。如今，我帶着自信、快樂與高度積極的精神重新出發，期待將這份溝通熱忱與問題解決能力，再度貢獻於職場！
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. 3 項技能 (Core Skills - 結合鮮豔配色卡片) -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-3">
+                <span class="w-3 h-3 bg-theme-teal rounded-full"></span>
+                <h2 class="text-sm font-black-tc uppercase tracking-wider text-theme-text">Core Skills / 核心技能</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- 技能 1 (青綠主題) -->
+                <div class="bg-theme-card p-6 rounded-3xl border-2 border-theme-teal/20 shadow-sm hover:border-theme-teal hover:shadow-md transition-all duration-200 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-theme-tealLight rounded-bl-full -z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-theme-teal text-white flex items-center justify-center mb-5 font-black-tc text-lg shadow-sm">
+                            01
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-theme-text group-hover:text-theme-tealDark transition-colors">流程數位化與行政優化</h3>
+                        <p class="text-xs md:text-sm text-theme-muted leading-relaxed">
+                            善於將傳統紙本/手寫作業轉換為電子報表，化繁為簡，提升資訊傳遞與檔案管理的效率。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 技能 2 (桃紅主題) -->
+                <div class="bg-theme-card p-6 rounded-3xl border-2 border-theme-pink/20 shadow-sm hover:border-theme-pink hover:shadow-md transition-all duration-200 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-theme-pinkLight rounded-bl-full -z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-theme-pink text-white flex items-center justify-center mb-5 font-black-tc text-lg shadow-sm">
+                            02
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-theme-text group-hover:text-theme-pink transition-colors">客製需求與陌生開發</h3>
+                        <p class="text-xs md:text-sm text-theme-muted leading-relaxed">
+                            具備主動開拓市場的行動力，精準洞察客戶潛在需求，提供超前佈局的量身定制服務方案。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 技能 3 (暖橙主題) -->
+                <div class="bg-theme-card p-6 rounded-3xl border-2 border-theme-orange/20 shadow-sm hover:border-theme-orange hover:shadow-md transition-all duration-200 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-theme-orangeLight rounded-bl-full -z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-theme-orange text-white flex items-center justify-center mb-5 font-black-tc text-lg shadow-sm">
+                            03
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-theme-text group-hover:text-theme-orange transition-colors">跨領域適應與持續學習</h3>
+                        <p class="text-xs md:text-sm text-theme-muted leading-relaxed">
+                            保持開闊心態與高學習熱忱，能快速適應新環境，將多元生活經驗轉化為強大的抗壓與溝通力。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. 3 個作品/實績區 (Career Highlights) -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-3">
+                <span class="w-3 h-3 bg-theme-orange rounded-full"></span>
+                <h2 class="text-sm font-black-tc uppercase tracking-wider text-theme-text">Career Highlights / 代表實績</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-6">
+                
+                <!-- 實績 1 -->
+                <div class="bg-theme-card rounded-3xl border border-theme-border overflow-hidden hover:shadow-md transition-all group flex flex-col md:flex-row">
+                    <div class="bg-theme-teal md:w-2/5 p-8 flex flex-col items-center justify-center text-center text-white relative">
+                        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl mb-3 shadow-inner">
+                            📊
+                        </div>
+                        <span class="font-black-tc text-lg text-white">業績白板數位化專案</span>
+                        <span class="text-xs text-white/80 mt-1 font-medium">內勤行政優化</span>
+                    </div>
+                    <div class="p-6 md:p-8 md:w-3/5 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="text-xs font-bold tracking-wider uppercase bg-theme-tealLight text-theme-tealDark px-3 py-1 rounded-full border border-theme-teal/20">Process Optimization</span>
+                            <h3 class="font-black-tc text-xl mt-3 mb-2 group-hover:text-theme-teal transition-colors">每日業績報表電子化與攜帶式查看</h3>
+                            <p class="text-sm text-theme-muted leading-relaxed">
+                                將原本手抄白板的業績轉為電腦數據，產出外勤可隨身查看的報表，並建立主管筆電自動化檔存機制，顯著改進營運決策與資訊流動速度。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 實績 2 -->
+                <div class="bg-theme-card rounded-3xl border border-theme-border overflow-hidden hover:shadow-md transition-all group flex flex-col md:flex-row">
+                    <div class="bg-theme-pink md:w-2/5 p-8 flex flex-col items-center justify-center text-center text-white relative">
+                        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl mb-3 shadow-inner">
+                            🏆
+                        </div>
+                        <span class="font-black-tc text-lg text-white">榮譽競賽與主任晉升</span>
+                        <span class="text-xs text-white/80 mt-1 font-medium">外勤業務與團隊開拓</span>
+                    </div>
+                    <div class="p-6 md:p-8 md:w-3/5 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="text-xs font-bold tracking-wider uppercase bg-theme-pinkLight text-theme-pink px-3 py-1 rounded-full border border-theme-pink/20">Sales & Leadership</span>
+                            <h3 class="font-black-tc text-xl mt-3 mb-2 group-hover:text-theme-pink transition-colors">陌生開發與量身定制風險規劃</h3>
+                            <p class="text-sm text-theme-muted leading-relaxed">
+                                主動至公共場所進行陌生拜訪，積極進修專業課程。為客戶超前規劃未預想的風險，獲得客戶高度肯定，順利達成榮譽競賽並升任業務主任。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 實績 3 -->
+                <div class="bg-theme-card rounded-3xl border border-theme-border overflow-hidden hover:shadow-md transition-all group flex flex-col md:flex-row">
+                    <div class="bg-theme-orange md:w-2/5 p-8 flex flex-col items-center justify-center text-center text-white relative">
+                        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl mb-3 shadow-inner">
+                            🌱
+                        </div>
+                        <span class="font-black-tc text-lg text-white">跨領域持續學習與生活管理</span>
+                        <span class="text-xs text-white/80 mt-1 font-medium">自我提升與心態沉澱</span>
+                    </div>
+                    <div class="p-6 md:p-8 md:w-3/5 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="text-xs font-bold tracking-wider uppercase bg-theme-orangeLight text-theme-orange px-3 py-1 rounded-full border border-theme-orange/20">Continuous Growth</span>
+                            <h3 class="font-black-tc text-xl mt-3 mb-2 group-hover:text-theme-orange transition-colors">跨領域體驗與溝通智慧累積</h3>
+                            <p class="text-sm text-theme-muted leading-relaxed">
+                                於家庭列表中持續多方學習新事項，鍛鍊情緒韌性與人際協調能力，奠定重返職場後能迅速與新團隊接軌的自信基礎。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4.5. 專業證照區塊 (Certifications - 3張證照點擊放大說明) -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="w-3 h-3 bg-theme-yellow rounded-full"></span>
+                    <h2 class="text-sm font-black-tc uppercase tracking-wider text-theme-text">Certifications / 專業證照</h2>
+                </div>
+                <span class="text-xs text-theme-muted font-medium">💡 點擊卡片可放大查看證照與詳細說明</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 證照 1 -->
+                <div onclick="openCertModal(0)" class="bg-theme-card rounded-3xl border border-theme-border p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <!-- 證照替代圖片容器 -->
+                        <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-theme-tealLight border border-theme-teal/20 group-hover:border-theme-teal transition-colors flex items-center justify-center">
+                            <img id="cert-img-0" src="https://placehold.co/600x400/36D1C4/FFFFFF?text=Certificate+01" alt="證照預覽 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-xs gap-1.5 backdrop-blur-xs">
+                                <span>🔍</span>
+                                <span>點擊放大檢視</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-theme-tealLight text-theme-tealDark border border-theme-teal/20">金融人壽</span>
+                            <span class="text-xs text-theme-muted">2023 考取</span>
+                        </div>
+                        <h3 class="font-bold text-base text-theme-text group-hover:text-theme-teal transition-colors">人身保險業務員資格測驗合格證</h3>
+                        <p class="text-xs text-theme-muted line-clamp-2 leading-relaxed">
+                            具備人身風險規劃、各類壽險條款解讀與客戶權益保障之專業金融知識。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-theme-border/60 mt-3 flex items-center justify-between text-xs font-bold text-theme-teal">
+                        <span>查看證照詳情</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+
+                <!-- 證照 2 -->
+                <div onclick="openCertModal(1)" class="bg-theme-card rounded-3xl border border-theme-border p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <!-- 證照替代圖片容器 -->
+                        <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-theme-pinkLight border border-theme-pink/20 group-hover:border-theme-pink transition-colors flex items-center justify-center">
+                            <img id="cert-img-1" src="https://placehold.co/600x400/E03E65/FFFFFF?text=Certificate+02" alt="證照預覽 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-xs gap-1.5 backdrop-blur-xs">
+                                <span>🔍</span>
+                                <span>點擊放大檢視</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-theme-pinkLight text-theme-pink border border-theme-pink/20">電腦資訊</span>
+                            <span class="text-xs text-theme-muted">2024 考取</span>
+                        </div>
+                        <h3 class="font-bold text-base text-theme-text group-hover:text-theme-pink transition-colors">TQC 企業軟體應用與試算表技能認證</h3>
+                        <p class="text-xs text-theme-muted line-clamp-2 leading-relaxed">
+                            熟練掌握 Excel / 數據報表邏輯、公式整合與數據視覺化排版，能高效率進行行政處理。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-theme-border/60 mt-3 flex items-center justify-between text-xs font-bold text-theme-pink">
+                        <span>查看證照詳情</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+
+                <!-- 證照 3 -->
+                <div onclick="openCertModal(2)" class="bg-theme-card rounded-3xl border border-theme-border p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <!-- 證照替代圖片容器 -->
+                        <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-theme-orangeLight border border-theme-orange/20 group-hover:border-theme-orange transition-colors flex items-center justify-center">
+                            <img id="cert-img-2" src="https://placehold.co/600x400/FF7A00/FFFFFF?text=Certificate+03" alt="證照預覽 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-xs gap-1.5 backdrop-blur-xs">
+                                <span>🔍</span>
+                                <span>點擊放大檢視</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-theme-orangeLight text-theme-orange border border-theme-orange/20">專業服務</span>
+                            <span class="text-xs text-theme-muted">2024 考取</span>
+                        </div>
+                        <h3 class="font-bold text-base text-theme-text group-hover:text-theme-orange transition-colors">顧客關係管理與溝通協調研習證書</h3>
+                        <p class="text-xs text-theme-muted line-clamp-2 leading-relaxed">
+                            完成高階跨部門溝通、客戶滿意度提升與情緒管理實務訓練，具備卓越的人際溝通素養。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-theme-border/60 mt-3 flex items-center justify-between text-xs font-bold text-theme-orange">
+                        <span>查看證照詳情</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. 聯絡方式 (Contact) -->
+        <section class="bg-theme-card p-8 md:p-12 rounded-3xl border border-theme-border shadow-sm text-center space-y-6 relative overflow-hidden">
+            <div class="inline-block bg-theme-tealLight text-theme-tealDark text-xs font-black-tc px-4 py-1.5 rounded-full uppercase tracking-widest border border-theme-teal/20">
+                Get In Touch
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black-tc text-theme-text">期待與您的合作交流</h2>
+            <p class="text-sm md:text-base text-theme-muted max-w-lg mx-auto leading-relaxed">
+                如果您正在尋找一位具備熱情、責任感與豐富實務智慧的夥伴，歡迎隨時與我聯繫！
+            </p>
+            <div class="pt-2 flex flex-wrap justify-center items-center gap-4">
+                <!-- 電子郵件按鈕 (主色青綠) -->
+                <a href="mailto:your.email@example.com" class="bg-theme-teal hover:bg-theme-tealDark text-white font-bold text-sm px-7 py-3.5 rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+                    ✉️ your.email@example.com
+                </a>
+                <!-- 電話按鈕 (桃紅外框) -->
+                <a href="tel:0912345678" class="border-2 border-theme-pink text-theme-pink hover:bg-theme-pink hover:text-white font-bold text-sm px-7 py-3.5 rounded-full transition-all flex items-center gap-2">
+                    📞 0912-345-678
+                </a>
+                <!-- 複製 Email JS 功能按鈕 -->
+                <button onclick="copyContactInfo('your.email@example.com')" class="bg-theme-bg text-theme-muted hover:text-theme-text font-bold text-xs px-5 py-3.5 rounded-full hover:bg-theme-border transition-colors">
+                    📋 複製 Mail
+                </button>
+            </div>
+            <p id="copy-toast" class="text-xs text-theme-pink font-bold h-4 transition-opacity opacity-0">
+                已成功複製聯繫 Email！
+            </p>
+        </section>
+
+    </main>
+
+    <!-- 圖片靈感：頁尾經典多色區塊裝飾條 (包含桃紅底、圖示圓角標籤、暖橙與金黃色塊) -->
+    <div class="w-full bg-theme-pink pt-3 pb-3 px-6 mt-12">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <!-- 左側圖示標籤 (複製圖片左下角的讚/圖片按鈕樣式) -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-sm border border-white/30">
+                    👍
+                </div>
+                <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-sm border border-white/30">
+                    🖼️
+                </div>
+            </div>
+
+            <!-- 右側暖橙與金黃裝飾塊 (靈感來自圖片底部色塊組) -->
+            <div class="flex items-center h-10 rounded-xl overflow-hidden shadow-sm">
+                <div class="w-12 md:w-20 h-full bg-theme-orange flex items-center justify-center text-white text-xs font-bold"></div>
+                <div class="w-12 md:w-20 h-full bg-theme-yellow flex items-center justify-center text-white text-xs font-bold"></div>
+                <div class="w-12 md:w-20 h-full bg-theme-teal flex items-center justify-center text-white text-xs font-bold"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 Footer (對齊圖片底部簡潔的極細版權字樣) -->
+    <footer class="bg-white text-center py-4 text-xs text-theme-muted border-t border-theme-border">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2">
+            <p class="font-medium">www.mei-hua-chen.com</p>
+            <p>© 2026 美華 (Mei-Hua Chen). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 證照放大與說明 Modal 視窗 -->
+    <div id="cert-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeCertModal(event)">
+        <div class="bg-theme-card max-w-2xl w-full rounded-3xl border border-theme-border shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-200" onclick="event.stopPropagation()">
+            <!-- 關閉按鈕 -->
+            <button onclick="closeCertModal()" class="absolute top-4 right-4 z-10 bg-black/20 hover:bg-black/40 text-white rounded-full w-9 h-9 flex items-center justify-center transition-colors text-lg">
+                ✕
+            </button>
+            
+            <!-- 證照圖片區域 -->
+            <div class="relative bg-slate-900 w-full h-64 md:h-80 flex items-center justify-center overflow-hidden">
+                <img id="modal-img" src="" alt="放大證照" class="w-full h-full object-contain p-4">
+                
+                <!-- 更換圖片上傳鍵 -->
+                <label for="cert-upload-input" class="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-theme-text text-xs font-bold px-3 py-1.5 rounded-full shadow-md cursor-pointer flex items-center gap-1">
+                    📷 更換此證照圖片
+                </label>
+                <input type="file" id="cert-upload-input" accept="image/*" class="hidden" onchange="uploadCertPhoto(event)">
+            </div>
+
+            <!-- 證照詳細說明區域 -->
+            <div class="p-6 md:p-8 space-y-4">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <span id="modal-badge" class="text-xs font-bold px-3 py-1 rounded-full">類別</span>
+                    <span id="modal-date" class="text-xs font-medium text-theme-muted">考取年份</span>
+                </div>
+
+                <h3 id="modal-title" class="text-xl md:text-2xl font-black-tc text-theme-text">
+                    證照名稱
+                </h3>
+
+                <div class="space-y-2 border-t border-theme-border pt-3">
+                    <h4 class="text-xs font-bold text-theme-muted uppercase tracking-wider">證照說明與相關技能</h4>
+                    <p id="modal-desc" class="text-sm md:text-base text-theme-text leading-relaxed">
+                        詳細說明內容...
+                    </p>
+                </div>
+
+                <div class="pt-2 flex justify-end">
+                    <button onclick="closeCertModal()" class="bg-theme-teal text-white font-bold text-xs px-6 py-2.5 rounded-full hover:bg-theme-tealDark transition-colors">
+                        關閉視窗
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 複製與證照 Modal 功能 -->
+    <script>
+        // 證照資料庫
+        const certData = [
+            {
+                title: "人身保險業務員資格測驗合格證",
+                category: "金融人壽",
+                categoryStyle: "bg-theme-tealLight text-theme-tealDark border-theme-teal/20",
+                date: "2023 年取得",
+                desc: "通過中華民國人身保險業務員資格測驗，熟悉各類壽險、年金險與醫療險商品之條款規範，具備為客戶評估家庭風險缺口、規劃客製化保障方案的實務能力。",
+                imgId: "cert-img-0"
+            },
+            {
+                title: "TQC 企業軟體應用與試算表技能認證",
+                category: "電腦資訊",
+                categoryStyle: "bg-theme-pinkLight text-theme-pink border-theme-pink/20",
+                date: "2024 年取得",
+                desc: "掌握電腦試算表（Excel）高階資料彙整、函數運用、自動化樞紐分析與報表格式標準化，能高效率地將手抄數據轉化為可攜式電子化決策報表。",
+                imgId: "cert-img-1"
+            },
+            {
+                title: "顧客關係管理與溝通協調研習證書",
+                category: "專業服務",
+                categoryStyle: "bg-theme-orangeLight text-theme-orange border-theme-orange/20",
+                date: "2024 年取得",
+                desc: "完成跨部門協調、客訴應對處理、情緒管理與顧客滿意度優化之專業教育訓練。結合外勤開發實務，能敏銳捕捉顧客需求並建立長久信任關係。",
+                imgId: "cert-img-2"
+            }
+        ];
+
+        let currentActiveCertIndex = 0;
+
+        function openCertModal(index) {
+            currentActiveCertIndex = index;
+            const data = certData[index];
+            const imgElement = document.getElementById(data.imgId);
+
+            document.getElementById("modal-title").innerText = data.title;
+            document.getElementById("modal-date").innerText = data.date;
+            document.getElementById("modal-desc").innerText = data.desc;
+            document.getElementById("modal-img").src = imgElement.src;
+
+            const badge = document.getElementById("modal-badge");
+            badge.innerText = data.category;
+            badge.className = `text-xs font-bold px-3 py-1 rounded-full border ${data.categoryStyle}`;
+
+            const modal = document.getElementById("cert-modal");
+            modal.classList.remove("hidden");
+        }
+
+        function closeCertModal(event) {
+            const modal = document.getElementById("cert-modal");
+            modal.classList.add("hidden");
+        }
+
+        function uploadCertPhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const modalImg = document.getElementById("modal-img");
+                    const cardImg = document.getElementById(certData[currentActiveCertIndex].imgId);
+                    if (modalImg) modalImg.src = e.target.result;
+                    if (cardImg) cardImg.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewUserPhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const avatarImg = document.getElementById("avatar-img");
+                    if (avatarImg) {
+                        avatarImg.src = e.target.result;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function copyContactInfo(text) {
+            // 使用傳統與現代兼容的剪貼簿寫法
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // 顯示提示訊息
+            const toast = document.getElementById("copy-toast");
+            if (toast) {
+                toast.classList.remove("opacity-0");
+                toast.classList.add("opacity-100");
+                setTimeout(() => {
+                    toast.classList.remove("opacity-100");
+                    toast.classList.add("opacity-0");
+                }, 2000);
+            }
+        }
+    </script>
+
+</body>
+</html>
